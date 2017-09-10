@@ -20,27 +20,27 @@
 
 #include <Module.hpp>
 
-class DirectX : public Module
+class DirectX final : public Module
 {
 public:
 	DirectX();
 private:
-	QList<Info> getModulesInfo(const bool) const override final;
-	void *createInstance(const QString &) override final;
+	QList<Info> getModulesInfo(const bool) const override;
+	void *createInstance(const QString &) override;
 
-	SettingsWidget *getSettingsWidget() override final;
+	SettingsWidget *getSettingsWidget() override;
 };
 
 /**/
 
 class QCheckBox;
 
-class ModuleSettingsWidget : public Module::SettingsWidget
+class ModuleSettingsWidget final : public Module::SettingsWidget
 {
 public:
 	ModuleSettingsWidget(Module &);
 private:
-	void saveSettings() override final;
+	void saveSettings() override;
 
 	QCheckBox *ddrawB;
 };
